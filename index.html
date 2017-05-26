@@ -5,14 +5,16 @@
   <meta charset="utf-8">
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="bower_components/moment/min/moment.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="build/js/app.js"></script>
+  <script src="js/repo.js"></script>
+  <script src="js/repo-interface.js"></script>  
   <title>view repo's</title>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <div class="main row">
       <h1>Welcome To Repository Dictonary</h1>
       <h3>where you can find your friends projects</h3>
@@ -20,9 +22,10 @@
         <label for="yeah">Enter a username:</label>
         <input id="yeah" type="text">
         <button type="submit" id="what">search</button>
+        <div class="showresults"></div>
       </form>
     </div>
-    <div class="magic"></div>
+
   </div>
 
 </body>
