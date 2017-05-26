@@ -1,9 +1,6 @@
 .main{
   width: 1300px;
-  height: 250px;
+  height: 200px;
   text-align: center;
   background-color: #73e5c8;
-}
-.container{
-  background-color: grey;
 }
