@@ -21,7 +21,7 @@ $(document).ready(function() {
   $('#what').click(function(event) {
     event.preventDefault();
     console.log('clicked');
-    var repos = $('#yeah').val();
+    var repos = $('#yeah').var();
     $('#location').val("");
     currentfindthemObject.getfindthem(repos, displayFunction);
   });
