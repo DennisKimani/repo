@@ -4,24 +4,65 @@ exports.apiKey = "44986d9e9bb194c6b44123cf12ae2c76e119861c";
 },{}],2:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
 
-exports.getRepository = function(){
-  $.get('https://api.github.com/users/ + ?access_token=' + apiKey).then(function(response){
+repository = function() {
+
+};
+
+findthem = function(){
+
+};
+
+repository.prototype.getrepository = function(name,displayFunction){
+  console.log(name);
+  $.get('https://api.github.com/users/' + name + '?access_token=' + apiKey).then(function(response){
+    displayFunction(response.name);
     console.log(response);
-  }).fail(function(error){
-    console.log(error.responseJSON.message);
+  }).fail(function(error) {
+    console.log('error');
   });
 };
+
+findthem.prototype.getfindthem = function(repos,displayFunction){
+  console.log(repos);
+  $.get('https://api.github.com/users/' + repos + '/repos/?access_token=' + apiKey).then(function(response){
+    displayFunction(response.repos);
+    console.log(response);
+  }).fail(function(error) {
+    console.log('error');
+  });
+};
+
 exports.repositoryModule = repository;
+exports.findthemModule = findthem;
 
 },{"./../.env":1}],3:[function(require,module,exports){
-var apiKey = require('./../.env').apiKey;
 var repository = require('./../js/repo.js').repositoryModule;
+var findthem = require('./../js/repo.js').findthemModule;
+
+var displayFunction = function(name) {
+  $('#showResults').text(name);
+};
+
 
 $(document).ready(function() {
-  $('#what').click(function() {
-    var project = $('#yeah').val();
-    $('#yeah').val("");
+  var currentrepositoryObject = new  repository();
+  console.log('ready');
+  $('#what').click(function(event) {
+    event.preventDefault();
+    console.log('clicked');
+    var name = $('#yeah').val();
+    $('#location').val("");
+    currentrepositoryObject.getrepository(name, displayFunction);
+  });
+  var currentfindthemObject = new findthem();
+  console.log('nice');
+  $('#what').click(function(event) {
+    event.preventDefault();
+    console.log('clicked');
+    var repos = $('#yeah').val();
+    $('#location').val("");
+    currentfindthemObject.getfindthem(repos, displayFunction);
   });
 });
 
-},{"./../.env":1,"./../js/repo.js":2}]},{},[3]);
+},{"./../js/repo.js":2}]},{},[3]);

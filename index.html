@@ -3,13 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="bower_components/moment/min/moment.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="js/repo.js"></script>
-  <script src="js/repo-interface.js"></script>  
+  <link rel="stylesheet" href="build/css/vendor.css">
+  <script src="build/js/vendor.min.js"></script>
+  <link rel="stylesheet" href="build/css/style.css">
+  <script type="text/javascript" src="build/js/app.js"></script>
   <title>view repo's</title>
 </head>
 
@@ -22,8 +19,9 @@
         <label for="yeah">Enter a username:</label>
         <input id="yeah" type="text">
         <button type="submit" id="what">search</button>
-        <div class="showresults"></div>
+        
       </form>
+      <p id="showResults"></p>
     </div>
 
   </div>
