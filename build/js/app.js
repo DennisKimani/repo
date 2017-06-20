@@ -59,7 +59,7 @@ $(document).ready(function() {
   $('#what').click(function(event) {
     event.preventDefault();
     console.log('clicked');
-    var repos = $('#yeah').var();
+    var repos = $('#yeah').val();
     $('#location').val("");
     currentfindthemObject.getfindthem(repos, displayFunction);
   });
