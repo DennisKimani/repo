@@ -20,7 +20,7 @@ repository.prototype.getrepository = function(name,displayFunction){
 
 findthem.prototype.getfindthem = function(repos,displayFunction){
   console.log(repos);
-  $.get('https://api.github.com/users/repo/' + repos + '?access_token=' + apiKey).then(function(response){
+  $.get('https://api.github.com/users/' + repos + '/repos/?access_token=' + apiKey).then(function(response){
     displayFunction(response.repos);
     console.log(response);
   }).fail(function(error) {
