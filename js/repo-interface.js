@@ -16,13 +16,13 @@ $(document).ready(function() {
     $('#location').val("");
     currentrepositoryObject.getrepository(name, displayFunction);
   });
-  var currentfindthemObject = new findthem();
-  console.log('nice');
+  var currentfindthemObject = new findthem();;
   $('#what').click(function(event) {
     event.preventDefault();
     console.log('clicked');
     var repos = $('#yeah').val();
     $('#location').val("");
+      console.log('nice')
     currentfindthemObject.getfindthem(repos, displayFunction);
   });
 });
